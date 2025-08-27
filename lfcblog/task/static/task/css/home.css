@@ -1,0 +1,101 @@
+/* Home page styles extracted from template */
+
+/* Reset small issues */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 66vh;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 60%);
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.08);
+  padding: 3rem 1.5rem;
+}
+.hero-title {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.6rem 0;
+  background: linear-gradient(90deg,#0ea5e9,#6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.hero-sub {
+  font-size: 1.125rem;
+  color: #334155;
+  margin: 0 auto;
+  max-width: 54rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* About */
+.about {
+  margin-top: 2.5rem;
+  padding: 2rem 1rem;
+}
+.about-card {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+/* Team */
+.team {
+  margin-top: 2.5rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.team-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+  min-height: 120px;
+}
+.team-name {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.team-role {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.3;
+}
+
+.banner-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.banner {
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: #fff;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.banner-1 { background: linear-gradient(135deg,#0ea5e9,#6366f1); }
+.banner-2 { background: linear-gradient(135deg,#34d399,#06b6d4); }
+.banner-3 { background: linear-gradient(135deg,#f97316,#ef4444); }
+
+@media (max-width: 900px) {
+  .banner-row { grid-template-columns: 1fr; }
+  .hero-title { font-size: 2.2rem; }
+}
