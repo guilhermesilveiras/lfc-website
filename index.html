@@ -6,27 +6,22 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700;900&display=swap');
-  
   /* Neubrutalista vintage-modern */
   :root{
     --bg:#ffffff;
-    --accent:#f59e0b;
+    --accent:#f59e0b; /* warm yellow */
     --muted:#374151;
     --primary:#0ea5e9;
     --dark:#0f172a;
     --card-bg:#fffef8;
     --border:4px solid #222;
-    --term-green:#00ff41;
   }
-  
   .page-wrap{background:var(--bg); padding:2rem 0;}
   .container{max-width:1100px; margin:0 auto; padding:0 1rem}
 
-  /* Hero block - terminal style */
+  /* Hero block - heavy, centered */
   .hero-box{
-    background:#000;
-    color:var(--term-green);
-    font-family: 'Fira Code', monospace;
+    background:linear-gradient(180deg,var(--card-bg),#fff);
     border:6px solid #111;
     padding:3rem 2rem;
     border-radius:6px;
@@ -34,204 +29,97 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
     flex-direction:column;
     align-items:center;
     gap:1rem;
-    box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
-    min-height: 72vh;
-    justify-content: center;
+    box-shadow: 12px 12px 0 rgba(0,0,0,0.06);
   }
-  
   .hero-title{
     font-size:3.4rem;
     line-height:1;
     margin:0;
     letter-spacing:1px;
-    color:var(--term-green);
+    color:var(--dark);
     font-weight:900;
     text-transform:none;
   }
-  
   .hero-accent{
     display:inline-block;
     padding:0.25rem 0.6rem;
     margin-top:0.5rem;
-    background:var(--term-green);
+    background:var(--accent);
     color:#111;
     font-weight:700;
     border-radius:4px;
     transform:skewX(-8deg);
   }
-  
   .hero-sub{
-    color:rgba(0,255,65,0.8);
+    color:var(--muted);
     max-width:48rem;
     text-align:center;
     font-size:1.05rem;
     margin-top:0.5rem;
-    font-family: 'Fira Code', monospace;
   }
 
-  .vintage-badge{
-    font-family:monospace;
-    font-size:0.8rem;
-    padding:0.1rem .5rem;
-    border-radius:2px;
-    background:#111;
-    color:#fff;
-  }
-
-  /* Banners */
-  .banners{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1rem;
-    margin-top:1.5rem;
-  }
-  
+  /* Banners - tiles with strong borders */
+  .banners{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem}
   .tile{
     background:#fff;
     border:6px solid #111;
     padding:1.25rem;
     border-radius:6px;
     min-height:120px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    display:flex;flex-direction:column;justify-content:center;
     box-shadow: 8px 8px 0 rgba(0,0,0,0.05);
   }
-  
   .tile h3{margin:0 0 .35rem 0; font-size:1.15rem}
   .tile p{margin:0; color:var(--muted)}
 
-  /* About section */
-  .about{
-    margin-top:2rem;
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:1rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+  /* About + Feature cards */
+  .about{margin-top:2rem; display:grid; grid-template-columns:2fr 1fr; gap:1rem}
   .about-text{background:transparent; padding:0}
-  
   .feature-card{
-    background:#000;
-    color:var(--accent);
+    background:#000; /* terminal black */
+    color:#7CFC00; /* terminal green */
     font-family: 'Courier New', Courier, monospace;
-    border:3px solid rgba(245,158,11,0.18);
+    border:3px solid rgba(124,252,0,0.18);
     padding:1rem;
     border-radius:6px;
     box-shadow: 6px 6px 0 rgba(0,0,0,0.25);
-    margin-bottom: 1rem;
   }
-  
-  .feature-card h5{margin:0 0 .5rem 0; color:var(--accent); font-weight:700}
-  .feature-card p{color:var(--accent); margin:0}
+  .feature-card h5{margin:0 0 .5rem 0; color:#b9ffb9; font-weight:700}
+  .feature-card p{color:#9ff69f; margin:0}
 
-  /* Section titles */
-  .section-title{
-    font-family: 'Fira Code', monospace;
-    display:flex;
-    align-items:center;
-    gap:0.6rem;
-    font-size:1.4rem;
-    color:var(--dark);
-    margin:0 0 0.6rem 0;
-  }
-  
-  .section-accent{
-    display:inline-block;
-    padding:0.18rem 0.55rem;
-    background:var(--accent);
-    color:#111;
-    font-weight:700;
-    border-radius:4px;
-    transform:skewX(-8deg);
-    font-family: 'Fira Code', monospace;
-  }
-
-  /* About content */
+  /* About content formatting for dynamic reading */
   .about-blocks{display:flex; flex-direction:column; gap:0.9rem}
   .about-blocks p{margin:0; color:var(--muted); line-height:1.6; font-size:1rem}
-  .about-quote{
-    border-left:6px solid var(--dark);
-    padding-left:1rem;
-    background:linear-gradient(90deg, rgba(255,255,255,0.6), transparent);
-    margin:0.6rem 0;
-    font-weight:700;
-  }
+  .about-quote{border-left:6px solid var(--dark); padding-left:1rem; background:linear-gradient(90deg, rgba(255,255,255,0.6), transparent); margin:0.6rem 0; font-weight:700}
 
-  /* Team section */
+  /* Section titles with Fira Code and hero-accent */
+  .section-title{font-family: 'Fira Code', monospace; display:flex; align-items:center; gap:0.6rem; font-size:1.4rem; color:var(--dark); margin:0 0 0.6rem 0}
+  .section-accent{display:inline-block; padding:0.18rem 0.55rem; background:var(--accent); color:#111; font-weight:700; border-radius:4px; transform:skewX(-8deg); font-family: 'Fira Code', monospace}
+
+  /* Team */
   .team{margin-top:2rem}
-  .team-header{
-    background:#000;
-    color:var(--term-green);
-    font-family: 'Fira Code', monospace;
-    text-align:center;
-    padding:1rem;
-    border:4px solid #111;
-    border-radius:6px;
-    margin-bottom:1rem;
-    box-shadow: 8px 8px 0 rgba(0,0,0,0.25);
-  }
-  
-  .team-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:1rem;
-  }
-  
-  .team-card{
-    background:#000;
-    color:var(--term-green);
-    font-family: 'Courier New', monospace;
-    border:3px solid var(--term-green);
-    padding:1rem;
-    border-radius:6px;
-    min-height:110px;
-    position:relative;
-    overflow:hidden;
-  }
-  
-  .team-inner{display:flex; gap:1rem; align-items:flex-start}
-  .avatar{
-    width:72px;
-    height:72px;
-    border:3px solid var(--term-green);
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:800;
-    color:var(--term-green);
-    background:#000;
-    flex:0 0 72px;
-  }
-  
-  .member-info{flex:1}
-  .member-title{font-weight:700; color:var(--term-green)}
-  .member-sub{font-size:0.92rem; color:rgba(0,255,65,0.7)}
-  
-  .bio-full{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.98), rgba(0,0,0,0.95));
-    color:var(--term-green);
-    padding:1rem;
-    display:none;
-    overflow:auto;
-    border-left:6px solid var(--term-green);
-  }
-  
-  .team-card:focus-within .bio-full,
-  .team-card:hover .bio-full{display:block}
+  .team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem}
+  .team-card{background:#fff; border:3px solid #111; padding:1rem; border-radius:6px; min-height:110px}
+  .team-name{font-weight:800; color:var(--dark)}
+  .team-role{font-size:0.92rem; color:var(--muted); margin-top:0.4rem}
+
+  /* Vintage touches */
+  .vintage-badge{font-family:monospace; font-size:0.8rem; padding:0.1rem .5rem; border-radius:2px; background:#111; color:#fff}
 
   @media (max-width:900px){
     .banners{grid-template-columns:1fr}
     .about{grid-template-columns:1fr}
     .hero-title{font-size:2.4rem}
   }
-  
+  /* Team avatars and hover bios */
+  .team-card{position:relative; overflow:hidden;}
+  .team-inner{display:flex; gap:1rem; align-items:flex-start}
+  .avatar{width:72px; height:72px; border:3px solid #111; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; background:linear-gradient(135deg,#111,#444); flex:0 0 72px}
+  .member-info{flex:1}
+  .member-title{font-weight:700; color:var(--dark)}
+  .member-sub{font-size:0.92rem; color:var(--muted)}
+  .bio-full{position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98)); padding:1rem; display:none; overflow:auto; border-left:6px solid #111}
+  .team-card:focus-within .bio-full, .team-card:hover .bio-full{display:block}
   @media (max-width:600px){
     .avatar{width:56px;height:56px;flex:0 0 56px}
   }
@@ -277,7 +165,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
       </div>
 
       <div class="features">
-        <div class="feature-card">
+        <div class="feature-card mb-3">
           <h5>Prevenção proativa de Bugs</h5>
           <p>Utilizando inteligência artificial e o algoritmo SZZ, o Learning from Commits analisa o histórico de commits do seu projeto para prever quais alterações têm maior probabilidade de introduzir defeitos. Essa abordagem permite identificar potenciais problemas antes que eles afetem o produto final, possibilitando ações corretivas antecipadas e reduzindo custos com correções tardias.</p>
         </div>
@@ -289,9 +177,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
     </section>
 
     <section class="team">
-      <div class="team-header">
-        <h2><span class="section-accent">Nosso Time</span></h2>
-      </div>
+      <h2 class="section-title" style="margin-bottom:0.75rem"><span class="section-accent">Nosso Time</span></h2>
       <div class="team-grid">
         <div class="team-card" tabindex="0">
           <div class="team-inner">
@@ -308,7 +194,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
 
         <div class="team-card" tabindex="0">
           <div class="team-inner">
-            <div class="avatar">RGS</div>
+            <div class="avatar">RG</div>
             <div class="member-info">
               <div class="member-title">Rodrigo G F Soares</div>
               <div class="member-sub">Doutor em ciência da computação</div>
@@ -321,15 +207,13 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
 
         <div class="team-card" tabindex="0">
           <div class="team-inner">
-            <div class="avatar">JVV</div>
+            <div class="avatar">JV</div>
             <div class="member-info">
               <div class="member-title">João Victor Vieira</div>
-              <div class="member-sub">Desenvolvedor Full stack</div>
+              <div class="member-sub">Desenvolvedor Full Stack</div>
             </div>
           </div>
-          <div class="bio-full">
-            Desenvolvedor Full stack | Python | JavaScript | Typescript | React
-          </div>
+          <div class="bio-full">Desenvolvedor Full stack | Python | JavaScript | Typescript | React</div>
         </div>
 
         <div class="team-card" tabindex="0">
@@ -340,9 +224,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
               <div class="member-sub">Pesquisador</div>
             </div>
           </div>
-          <div class="bio-full">
-            Pesquisador | Python
-          </div>
+          <div class="bio-full">PESQUISADOR | Python</div>
         </div>
 
         <div class="team-card" tabindex="0">
@@ -353,9 +235,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
               <div class="member-sub">Bacharela em Ciência da Computação</div>
             </div>
           </div>
-          <div class="bio-full">
-            Bacharela em Ciência da Computação – UFRPE com ênfase em Inteligência Artificial e Ciência de Dados
-          </div>
+          <div class="bio-full">Bacharela em Ciência da Computação – UFRPE com ênfase em Inteligência Artificial e Ciência de Dados</div>
         </div>
 
         <div class="team-card" tabindex="0">
@@ -366,9 +246,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
               <div class="member-sub">Engenheiro de Software</div>
             </div>
           </div>
-          <div class="bio-full">
-            Engenheiro de Software | Python | Java | PHP
-          </div>
+          <div class="bio-full">Engenheiro de Software | Python | Java | PHP</div>
         </div>
 
         <div class="team-card" tabindex="0">
@@ -379,9 +257,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
               <div class="member-sub">Pesquisador</div>
             </div>
           </div>
-          <div class="bio-full">
-            Pesquisador | Python
-          </div>
+          <div class="bio-full">PESQUISADOR | Python</div>
         </div>
 
         <div class="team-card" tabindex="0">
@@ -392,9 +268,7 @@ description: "Melhorar a qualidade e a agilidade do desenvolvimento de software 
               <div class="member-sub">Pesquisador</div>
             </div>
           </div>
-          <div class="bio-full">
-            Pesquisador | Python
-          </div>
+          <div class="bio-full">PESQUISADOR | Python</div>
         </div>
       </div>
     </section>
