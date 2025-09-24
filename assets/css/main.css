@@ -1,0 +1,141 @@
+/* Custom CSS for LFC Website */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700;900&display=swap');
+
+/* Variables */
+:root {
+  --accent: #f59e0b;
+  --muted: #374151;
+  --dark: #0f172a;
+  --term-green: #00ff41;
+}
+
+/* Global Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-family: 'Fira Code', monospace;
+  font-weight: 900;
+}
+
+/* Code blocks */
+pre {
+  background: #000;
+  color: var(--term-green);
+  border: 3px solid #333;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 2px solid #333;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background: var(--accent);
+  color: #111;
+  font-weight: bold;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 6px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background: linear-gradient(90deg, rgba(245,158,11,0.1), transparent);
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 3px solid #333;
+}
+
+/* Blog post content styling */
+.blog-post-content h1,
+.blog-post-content h2,
+.blog-post-content h3,
+.blog-post-content h4,
+.blog-post-content h5,
+.blog-post-content h6 {
+  font-family: 'Fira Code', monospace;
+  color: var(--dark);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-content h1 { font-size: 2rem; }
+.blog-post-content h2 { font-size: 1.7rem; }
+.blog-post-content h3 { font-size: 1.4rem; }
+.blog-post-content h4 { font-size: 1.2rem; }
+
+/* Lists */
+.blog-post-content ul,
+.blog-post-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+}
+
+/* Utility classes */
+.text-muted {
+  color: var(--muted) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}

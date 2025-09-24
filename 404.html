@@ -1,0 +1,93 @@
+---
+layout: default
+title: "Página não encontrada"
+permalink: /404.html
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700;900&display=swap');
+  
+  .error-page {
+    text-align: center;
+    padding: 4rem 1rem;
+    min-height: 60vh;
+  }
+  
+  .error-code {
+    font-family: 'Fira Code', monospace;
+    font-size: 8rem;
+    font-weight: 900;
+    color: #f59e0b;
+    margin: 0;
+    text-shadow: 4px 4px 0 #0f172a;
+  }
+  
+  .error-message {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5rem;
+    color: #374151;
+    margin: 1rem 0;
+  }
+  
+  .error-description {
+    color: #6b7280;
+    margin: 2rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn-home {
+    display: inline-block;
+    background: #f59e0b;
+    color: #111;
+    padding: 0.75rem 1.5rem;
+    border: 4px solid #111;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Fira Code', monospace;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+    transition: all 0.2s;
+  }
+  
+  .btn-home:hover {
+    background: #111;
+    color: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+  }
+  
+  .terminal-box {
+    background: #000;
+    color: #00ff41;
+    font-family: 'Fira Code', monospace;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #333;
+    margin: 2rem auto;
+    max-width: 400px;
+    text-align: left;
+  }
+</style>
+
+<div class="container">
+  <div class="error-page">
+    <h1 class="error-code">404</h1>
+    <h2 class="error-message">Página não encontrada</h2>
+    
+    <div class="terminal-box">
+      <div>$ ls -la /page</div>
+      <div>ls: cannot access '/page': No such file or directory</div>
+      <div>$ echo "Oops!"</div>
+      <div>Oops!</div>
+    </div>
+    
+    <div class="error-description">
+      <p>A página que você está procurando não existe ou foi movida.</p>
+      <p>Que tal voltar ao início e explorar nosso conteúdo?</p>
+    </div>
+    
+    <a href="{{ '/' | relative_url }}" class="btn-home">← Voltar ao Início</a>
+  </div>
+</div>

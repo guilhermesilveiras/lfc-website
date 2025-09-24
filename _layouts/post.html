@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <article class="blog-post">
+                <header class="mb-4">
+                    <h1 class="blog-post-title">{{ page.title }}</h1>
+                    <div class="blog-post-meta text-muted mb-3">
+                        <span>Por {{ page.author | default: 'Admin' }}</span>
+                        <span class="mx-2">•</span>
+                        <time datetime="{{ page.date | date_to_xmlschema }}">
+                            {{ page.date | date: '%d de %B de %Y' }}
+                        </time>
+                        {% if page.tags.size > 0 %}
+                        <span class="mx-2">•</span>
+                        {% for tag in page.tags %}
+                            <span class="badge bg-secondary me-1">{{ tag }}</span>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </header>
+                
+                <div class="blog-post-content">
+                    {{ content }}
+                </div>
+                
+                <hr class="my-4">
+                
+                <nav class="blog-pagination">
+                    <div class="row">
+                        <div class="col-6">
+                            {% if page.previous %}
+                                <a class="btn btn-outline-primary" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | truncate: 30 }}</a>
+                            {% endif %}
+                        </div>
+                        <div class="col-6 text-end">
+                            {% if page.next %}
+                                <a class="btn btn-outline-primary" href="{{ page.next.url | relative_url }}">{{ page.next.title | truncate: 30 }} &rarr;</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+            </article>
+        </div>
+    </div>
+</div>

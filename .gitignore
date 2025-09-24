@@ -16,6 +16,13 @@ db.sqlite3
 media/
 staticfiles/
 
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
 # VSCode
 .vscode/
 
